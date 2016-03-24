@@ -1,0 +1,22 @@
+ul#chat {
+  background-color: rgba(14, 42, 60, 0.78);
+  border-radius: 25px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  height: 400px;
+  border: solid 1px #777;
+  overflow: auto;
+  li {
+    color: #428bca;
+    margin: 5% 5% 5% 5%;
+    padding: 0;
+    .created_at {
+      float: right;
+      color: #e2e2e2;
+      font-size: 11px;
+      padding-left: 4px;
+      padding-top: 2px;
+    }
+  }
+}

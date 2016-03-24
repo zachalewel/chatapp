@@ -1,0 +1,10 @@
+<% publish_to "/messages/new" do %>
+$("#chat").append("<%= j render(@message) %>");
+var height = 0;
+$('#chat').each(function(){
+  height += parseInt($(this).height());
+});
+height += '400px';
+$('#chat').animate({scrollTop: height});
+<% end %>
+$("#new_message")[0].reset();
