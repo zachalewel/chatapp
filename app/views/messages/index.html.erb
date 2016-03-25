@@ -1,12 +1,21 @@
-<h1>TextAnonymous</h1>
+<h4>Z-non</h4>
 
 <ul id="chat">
   <%= render @messages %>
 </ul>
-
-<%= form_for Message.new, :html => {:multipart => true}, authenticity_token: true, class: "input-group", remote: true do |f| %>
-  <%= f.text_field :content, placeholder: "Message", class: "form-control", style: "width: 70%;" %>
-  <%= f.submit "Send", class: "btn btn-info" %>
-  <%= f.file_field :attachment, class: "btn btn-danger"%>
-<% end %>
+<div id="chatContainer">
+  <%= form_for Message.new, :html => {:multipart => true}, authenticity_token: true, class: "input-group", remote: true do |f| %>
+    <div>
+    <%= f.text_field :content, placeholder: "Message", class: "form-control" %>
+    </div>
+    <p> </p>
+    <div style="width: 50%; margin: 0 auto; text-align: center;">
+    <%= f.file_field :attachment, class: "btn btn-danger", id: "filetag" %>
+    </div>
+      <p> </p>
+    <div style="width: 50%; margin: 0 auto; text-align: center;">
+      <%= f.submit "Send", class: "btn btn-info", id: "submitId" %>
+    </div>
+  <% end %>
+</div>
 <%= subscribe_to "/messages/new" %>
