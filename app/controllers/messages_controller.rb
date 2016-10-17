@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
   require 'carrierwave/orm/activerecord'
+
+
   def index
     @messages = Message.last(15)
   end
@@ -13,7 +15,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to root_path }
-        format.js   {}
+        format.js
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: 'create' }

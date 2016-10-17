@@ -3,19 +3,23 @@
 <ul id="chat">
   <%= render @messages %>
 </ul>
+<!-- This is the form that will create a new message and post it via a Faye server-->
 <div id="chatContainer">
   <%= form_for Message.new, :html => {:multipart => true}, authenticity_token: true, class: "input-group", remote: true do |f| %>
     <div>
-    <%= f.text_field :content, placeholder: "Message", class: "form-control" %>
+      <%= f.text_field :content, placeholder: "Message", class: "form-control" %>
     </div>
-    <p> </p>
+    <p></p>
+
     <div style="width: 50%; margin: 0 auto; text-align: center;">
-    <%= f.file_field :attachment, class: "btn btn-danger", id: "filetag" %>
+      <%= f.file_field :attachment, class: "btn btn-danger", id: "filetag" %>
     </div>
-      <p> </p>
+    <p></p>
+
     <div style="width: 50%; margin: 0 auto; text-align: center;">
       <%= f.submit "Send", class: "btn btn-info", id: "submitId" %>
     </div>
   <% end %>
 </div>
 <%= subscribe_to "/messages/new" %>
+<br>

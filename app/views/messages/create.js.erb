@@ -1,5 +1,5 @@
 <% publish_to "/messages/new" do %>
-$("#chat").append("<%= j render(@message) %>");
+$('#chat').append("<%= j render(@message) %>");
 var height = 0;
 $('#chat').each(function(){
   height += parseInt($(this).height());
@@ -8,3 +8,5 @@ height += '400px';
 $('#chat').animate({scrollTop: height});
 <% end %>
 $("#new_message")[0].reset();
+
+$.playSound("http://fsa.zobj.net/dl/ringtone/73ec3bdd23bfbf9ed0b251813f521b61/wrist_watch_beep.mp3?ref=www&type=mc")

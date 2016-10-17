@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(version: 20160320190835) do
 
   create_table "messages", force: :cascade do |t|
-    t.text   "content"
-    t.string "attachment"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment"
   end
 
 end
