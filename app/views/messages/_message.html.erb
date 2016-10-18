@@ -1,5 +1,5 @@
 <li>
-  <span class="created_at"><%= Time.now %></span>
+  <span class="created_at"><%= message.created_at %></span>
   <%= message.content %>
   <% if message.attachment.present? %>
     <% message_name = message.attachment.to_s.match(/[0-9]\/[a-zA-Z0-9_-]*.[a-z]*/) %>
