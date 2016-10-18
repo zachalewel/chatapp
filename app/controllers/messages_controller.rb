@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
 
   def index
-    @messages = Message.last(15)
+    @messages = Message.last(5)
   end
 
   def show

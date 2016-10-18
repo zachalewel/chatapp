@@ -1,5 +1,5 @@
 ul#chat {
-  background-color: rgba(14, 42, 60, 0.78);
+  background-color: rgb(0, 0, 0);
   border-radius: 25px;
   list-style: none;
   padding: 0;
@@ -8,7 +8,8 @@ ul#chat {
   border: solid 1px #777;
   overflow: auto;
   li {
-    color: #428bca;
+    font-family: "carbontype";
+    color: #94c500;
     margin: 5% 5% 5% 5%;
     padding: 0;
     .created_at {
