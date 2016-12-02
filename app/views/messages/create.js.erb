@@ -2,10 +2,26 @@
 $('#chat').append("<%= j render(@message) %>");
 var height = 0;
 $('#chat').each(function(){
-  height += parseInt($(this).height());
+    height += parseInt($(this).height());
 });
 height += '400px';
 $('#chat').animate({scrollTop: height});
-$.playSound("http://soundbible.com/mp3/Chain%20Gun%20Shooting-SoundBible.com-882681443")
+
+
+<% case @message.content %>
+<% when "quit barking" then  %>
+$.playSound("<%= audio_path('sms_sound') %>");
+<% when "good girl" then %>
+$.playSound("<%= audio_path('sms_sound') %>");
+<% when "sit" then %>
+$.playSound("<%= audio_path('sms_sound') %>");
+<% when "what are you doing" then %>
+$.playSound("<%= audio_path('sms_sound') %>");
+<% when "chh" then %>
+$.playSound("<%= audio_path('sms_sound') %>");
+<% else %>
+$.playSound("<%= audio_path('gong') %>");
+<% end %>
+
 <% end %>
 $("#new_message")[0].reset();

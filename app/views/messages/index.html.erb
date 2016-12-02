@@ -21,5 +21,6 @@
     </div>
   <% end %>
 </div>
+<%= button_to "Sound", "#", method: :get, class: "sound-button", remote: true %>
 <%= subscribe_to "/messages/new" %>
 <br>
